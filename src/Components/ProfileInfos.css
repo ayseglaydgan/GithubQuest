@@ -1,0 +1,51 @@
+.text-info {
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 15px;
+    color: #fff;
+}
+
+.text-info:hover {
+    color: #bbb;
+}
+
+.text-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    width: 20px;
+}
+
+.text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-infos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #fff;
+}
+
+.personal-infos {
+    display: flex;
+    margin-bottom: 50px;
+    border: #bbb solid 1px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 20px;
+}
+
+.avatar {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.profile-pic {
+    border-radius: 100px;
+}
