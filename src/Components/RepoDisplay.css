@@ -1,0 +1,12 @@
+.repo-card {
+    display: flex;
+    flex-direction: column;
+    border: #bbb solid 1px;
+    border-radius: 10px;
+    padding-inline: 20px;
+
+}
+
+.repo-cards {
+    display: flex;
+}

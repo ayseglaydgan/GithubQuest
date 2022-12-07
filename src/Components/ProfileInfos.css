@@ -37,6 +37,8 @@
     align-items: center;
     gap: 50px;
     padding-top: 20px;
+    padding-inline: 20px;
+
 }
 
 .avatar {

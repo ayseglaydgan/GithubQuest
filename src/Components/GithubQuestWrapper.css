@@ -1,0 +1,9 @@
+.github-quest-wrapper {
+    display: flex;
+
+    gap: 20px;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
