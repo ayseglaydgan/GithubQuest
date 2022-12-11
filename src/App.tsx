@@ -5,6 +5,8 @@ import RepoDisplay from './Components/RepoDisplay'
 import { exampleUser } from './Data/exampleData'
 
 
+// MY TOKEN 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
+
 
 function App() {
 
@@ -15,17 +17,13 @@ function App() {
       </head>
       <h1 className='head'>GitHub</h1>
       <GithubQuestWrapper>
-        <ProfileInfos /
-        >
+        <ProfileInfos />
         <GithubQuestWrapper isColumn={true}>
 
           <RepoDisplay title='Overview' RepoArray={exampleUser.repos} />
           <RepoDisplay title='Others' RepoArray={exampleUser.repos} />
 
         </GithubQuestWrapper>
-
-
-
       </GithubQuestWrapper>
     </div>
   )

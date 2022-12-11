@@ -30,7 +30,7 @@
 
 .personal-infos {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     border: #bbb solid 1px;
     border-radius: 10px;
     flex-direction: column;
@@ -38,6 +38,8 @@
     gap: 50px;
     padding-top: 20px;
     padding-inline: 20px;
+    max-height: 450px;
+    min-width: 200px;
 
 }
 

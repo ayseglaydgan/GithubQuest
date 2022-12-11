@@ -8,10 +8,11 @@ export interface RepoType {
 }
 
 export interface UserType {
-    userName: string;
+    name: string;
     email: string;
-    avatarUrl: string;
+    avatar_url: string;
     followers: number;
     following: number;
+    public_repos: number;
     repos: RepoType[];
 }

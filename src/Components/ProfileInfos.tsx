@@ -1,5 +1,8 @@
 import { exampleUser } from "../Data/exampleData"
+import React, { useState, useEffect } from 'react'
 import './ProfileInfos.css'
+import axios from 'axios'
+import { Octokit } from "octokit"
 
 interface TextInfoProps {
     id: string,
@@ -25,32 +28,46 @@ const TextInfo = ({ id, icon, text }: TextInfoProps) => {
     )
 }
 
+
+
 const TextInfos = () => {
+
+    const octokit = new Octokit({
+        auth: '<YOUR TOKEN HERE>'
+    })
+    const [user, setUser] = useState(exampleUser)
+    useEffect(() => {
+        const fetchUser = async () => {
+            const response = await octokit.request('GET /users/{username}', {
+                username: 'ayseglaydgan'
+            })
+            console.log(response)
+            setUser(response.data as any)
+        }
+        fetchUser()
+    }, [])
+
+
     return (
-        <div className='text-infos'>
-            <TextInfo id='user-name' icon='fa-user' text={exampleUser.userName} />
-            <TextInfo id='email' icon='fa-envelope' text={exampleUser.email} />
-            <TextInfo id='followers' icon='fa-users' text={`${exampleUser.followers} followers`} />
-            <TextInfo id='following' icon='fa-circle' text={`${exampleUser.following} following`} />
-            <TextInfo id='repositories' icon='fa-code-fork' text={`${exampleUser.repos.length} repositories`} />
+        <div>
+            <div className='avatar'>
+                <img className='profile-pic' src={user.avatar_url}></img>
+            </div>
+            <div className='text-infos'>
+                <TextInfo id='user-name' icon='fa-user' text={user.name} />
+                <TextInfo id='email' icon='fa-envelope' text={user.email} />
+                <TextInfo id='followers' icon='fa-users' text={`${user.followers} followers`} />
+                <TextInfo id='following' icon='fa-circle' text={`${user.following} following`} />
+                <TextInfo id='repositories' icon='fa-code-fork' text={`${user.public_repos} repositories`} />
+            </div>
         </div>
+
     )
 }
-
-
-const Avatar = () => {
-    return (
-        <div className='avatar'>
-            <img className='profile-pic' src='https://avatars.githubusercontent.com/u/54666425?v=4'></img>
-        </div>
-    )
-}
-
 
 const ProfileInfos = () => {
     return (
         <div className="personal-infos">
-            <Avatar />
             <TextInfos />
         </div>
     )

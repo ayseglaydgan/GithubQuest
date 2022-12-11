@@ -3,10 +3,13 @@
     flex-direction: column;
     border: #bbb solid 1px;
     border-radius: 10px;
-    padding-inline: 20px;
+    padding: 20px;
+    min-width: 200px;
 
 }
 
 .repo-cards {
     display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
